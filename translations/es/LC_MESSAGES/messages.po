@@ -1,0 +1,64 @@
+# Traducciones al español para PROYECTO.
+# Copyright (C) 2023 ORGANIZACIÓN
+# Este archivo se distribuye bajo la misma licencia que el proyecto PROYECTO.
+# PRIMER AUTOR <CORREO@EJEMPLO.COM>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: VERSIÓN DEL PROYECTO\n"
+"Report-Msgid-Bugs-To: CORREO@EJEMPLO.COM\n"
+"POT-Creation-Date: 2023-12-11 22:12-0500\n"
+"PO-Revision-Date: 2023-12-11 22:12-0500\n"
+"Last-Translator: NOMBRE COMPLETO <CORREO@EJEMPLO.COM>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.13.1\n"
+
+#: app.py:23
+msgid "Name"
+msgstr "Nombre"
+
+#: app.py:24
+msgid "Submit"
+msgstr "Enviar"
+
+#: app.py:35
+msgid "Form submitted successfully!"
+msgstr "¡Formulario enviado exitosamente!"
+
+#: templates/base.html:10
+msgid "Welcome to my webSite!"
+msgstr "¡Bienvenido a mi sitio web!"
+
+#: templates/base.html:12
+msgid "Change Language"
+msgstr "Cambiar Idioma"
+
+#: templates/date.html:1
+msgid "Today is"
+msgstr "Hoy es"
+
+#: templates/error.html:1
+msgid "An error occurred"
+msgstr "Ocurrió un error"
+
+#: templates/form.html:6
+msgid "Form"
+msgstr "Formulario"
+
+#: templates/home.html:8
+msgid "This is the content of the home page"
+msgstr "Este es el contenido de la página de inicio"
+
+#: templates/items.html:1
+#, python-format
+msgid "There is %(num_items)d item"
+msgstr "Hay %(num_items)d elemento"
+
+#: templates/number.html:1
+msgid "Formatted Number"
+msgstr "Número Formateado"
