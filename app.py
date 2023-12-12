@@ -3,7 +3,7 @@ from flask import Flask, render_template, flash, redirect, session, url_for, req
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired
-from flask_babel import Babel, _
+from flask_babel import Babel, _, gettext, format_datetime, format_number
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'tu_clave_secreta'
@@ -48,23 +48,31 @@ def set_language(language):
 
 @app.route('/date')
 def date():
-    current_date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    return render_template('date.html', current_date=current_date)
+    now = datetime.utcnow()
+    formatted_date = format_datetime(now, "medium")
+    return render_template('date.html', formatted_date=formatted_date)
 
 @app.route('/error')
 def error():
-    return render_template('error.html')
+    try:
+        # Lanzar una excepción de localización
+        raise Exception(_('This is an error message.'))
+    except Exception as e:
+        error_message = gettext(str(e))
+    return render_template('error.html', error_message=error_message)
 
 @app.route('/items')
 def items():
-    num_items = 5  # Puedes obtener este valor de tu base de datos o de cualquier fuente de datos
+    num_items = 1
+    # num_items = 2
     return render_template('items.html', num_items=num_items)
+
 
 @app.route('/number')
 def number():
-    formatted_number = 12345.6789  # Puedes obtener este número de tu base de datos o de cualquier fuente de datos
+    num = 12345.6789
+    formatted_number = format_number(num)
     return render_template('number.html', formatted_number=formatted_number)
-
 
 if __name__ == '__main__':
     app.run(debug=True)

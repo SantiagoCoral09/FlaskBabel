@@ -9,6 +9,18 @@
     <h1>{% block header %}{% endblock %}</h1>
     <p>{{ _('Welcome to my webSite!') }}</p>
 
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('home') }}">{{ _('Home') }}</a></li>
+            <li><a href="{{ url_for('form') }}">{{ _('Form') }}</a></li>
+            <li><a href="{{ url_for('date') }}">{{ _('Date') }}</a></li>
+            <li><a href="{{ url_for('error') }}">{{ _('Error') }}</a></li>
+            <li><a href="{{ url_for('items') }}">{{ _('Items') }}</a></li>
+            <li><a href="{{ url_for('number') }}">{{ _('Number') }}</a></li>
+        </ul>
+        
+    </nav>
+
     <p>{{gettext('Change Language')}}:
         <a href="{{ url_for('set_language', language='en') }}">English</a> |
         <a href="{{ url_for('set_language', language='es') }}">Español</a>

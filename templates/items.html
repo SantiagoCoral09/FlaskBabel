@@ -1,1 +1,13 @@
-<p>{{ _('There is %(num_items)d item', 'There are %(num_items)d items', num_items) }}</p>
+{% extends 'base.html' %}
+
+{% block title %}Items{% endblock %}
+
+{% block content %}
+    <h2>{{ _('Items') }}</h2>
+    {% if num_items is defined and num_items is not none %}
+        {% set localized_string = ngettext('There is %(num)d item', 'There are %(num)d items', num_items) %}
+        <p>{{ localized_string|format(num=num_items|int) }}</p>
+    {% else %}
+        <p>No items available.</p>
+    {% endif %}
+{% endblock %}
